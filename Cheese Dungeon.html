@@ -1,0 +1,76 @@
+<tw-storydata name="Cheese Dungeon" startnode="1" creator="Twine" creator-version="2.2.1" ifid="C9BAE8DD-6929-498C-9C75-DA005CF15B29" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-link[tags~="green"] {
+ color:green; 
+}
+
+tw-sidebar tw-icon.redo {
+ display: none;
+}
+tw-sidebar tw-icon.undo {
+ display: none;
+}
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+
+</script><tw-tag name="Habitación" color="red"></tw-tag><tw-passagedata pid="1" name="CELDAS" tags="Habitación" position="412,188" size="100,100">Entras en una habitación Oscura. Ves cuatro celdas, solo tienes una ganzúa.
+
+En la [[primera-&gt;CeldaGordo]] hay un hombre gordo dormido.
+En la [[segunda-&gt;CeldaGoblin]] hay un goblin, masculla al verte pero no le entiendes.
+En la [[tercera-&gt;CeldaAndrajoso]] hay un hombre andrajoso con una pata de palo que solo verte suplica que le liberes.
+La [[cuarta-&gt;CeldaVacía]] está vacía.
+
+
+(set: $oro to 1)
+(set: $goblinsAmigos to false)
+</tw-passagedata><tw-passagedata pid="2" name="CeldaGordo" tags="green" position="262,337" size="100,100">Sigue dormido.
+
+[[Robarle-&gt;RobarGordo]]
+[[Despertarle-&gt;DespertarGordo]]</tw-passagedata><tw-passagedata pid="3" name="CeldaGoblin" tags="" position="376,336" size="100,100">El goblin masculla y se marcha contento. El hombre de la tercera celda te dice que conoce el lenguaje goblin pero que como no le has liberado no va a traducir nada de lo que ha dicho.
+
+
+
+(set: $goblinsAmigos to true)
+
+(set: $goblinsFinal to &quot;Los goblins acuden a tu funeral.&quot;)
+
+[[Continuar-&gt;GOBLINS]] </tw-passagedata><tw-passagedata pid="4" name="CeldaAndrajoso" tags="" position="491,335" size="100,100">Te da las gracias, dice que estaba harto de escuchar al goblin rajar de su suegra.
+
+(set: $trollSaciado to true)
+
+(set: $finalAndrajoso to &quot;Tras escapar cayó en las manos de un troll que lo enguyó al instante.&quot;)
+
+[[Continuar-&gt;GOBLINS]] </tw-passagedata><tw-passagedata pid="5" name="CeldaVacía" tags="" position="608,335" size="100,100">(set: $oro to $oro + 1)
+Encuentras una habitación secreta bajo una trampilla, en ella hay una moneda de oro. 
+
+Ahora tienes **$oro monedas de oro**.
+
+
+[[Continuar-&gt;GOBLINS]] </tw-passagedata><tw-passagedata pid="6" name="RobarGordo" tags="" position="187,487" size="100,100">Consigues **aceite**.
+
+(set: $aceite to true)
+
+(set: $gordoFinal to &quot;El gordo continuó trabajando como vareador de olivas muchos años.&quot;)
+
+[[Continuar-&gt;GOBLINS]] </tw-passagedata><tw-passagedata pid="7" name="DespertarGordo" tags="" position="337,487" size="100,100">Te agradece haberle liberado y sale a paso lento de la habitación.
+
+(set: $aceite to false)
+
+(set: $gordoFinal to &quot;El gordo te envía botellas de aceite cada cosecha.&quot;)
+
+[[Continuar-&gt;GOBLINS]] </tw-passagedata><tw-passagedata pid="8" name="GOBLINS" tags="Habitación" position="396,716" size="100,100">A través de la mirilla ves a unos goblins de espaldas a la puerta.
+
+[[Entrar-&gt;HabitaciónGoblins]]
+
+
+</tw-passagedata><tw-passagedata pid="9" name="HabitaciónGoblins" tags="" position="260,849" size="100,100">(if: $aceite is true)[Consigues avanzar sigilosamente.]
+
+(if: $goblinsAmigos is true)[La puerta, oxidada, hace ruido al abrirse. Los goblins se giran y te observan, uno de ellos es el de la celda. Te reconoce y te saluda amigablemente. Su amigo, que si habla tu idioma, te dice &quot;Es peligroso ahí fuera, coje esto&quot; y te da una espada goblin.]
+
+(else:)[La puerta, oxidada, hace ruido al abrirse. Los gooblins te ven y te atacan. 
+
+[[Continuar-&gt;gooblinsTeVen]]]</tw-passagedata><tw-passagedata pid="10" name="gooblinsTeVen" tags="" position="150,970" size="100,100">(if:$armado is true)[Consigues matarlos, pero ahora estás manchado de sangre goblins, la cual es muy viscosa y no se quitan fácilmente.]
+
+(else:)[Los gooblins te matan. Fin de la partida.
+
+[[Continuar-&gt;FinPartida]]]</tw-passagedata><tw-passagedata pid="11" name="FinPartida" tags="" position="399,1099" size="100,100">[[Empezar de nuevo-&gt;CELDAS]]</tw-passagedata></tw-storydata>
