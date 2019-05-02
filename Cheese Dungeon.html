@@ -1,4 +1,4 @@
-<tw-storydata name="Cheese Dungeon" startnode="14" creator="Twine" creator-version="2.2.1" ifid="C9BAE8DD-6929-498C-9C75-DA005CF15B29" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-link[tags~="green"] {
+<tw-storydata name="Cheese Dungeon" startnode="1" creator="Twine" creator-version="2.2.1" ifid="C9BAE8DD-6929-498C-9C75-DA005CF15B29" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-link[tags~="green"] {
  color:green; 
 }
 
@@ -64,28 +64,21 @@ Ahora tienes **$oro monedas de oro**.
 
 (set: $aceite to false)
 
+(set: $gordoLiberado to true)
+
 (set: $gordoFinal to &quot;El gordo te envía botellas de aceite cada cosecha.&quot;)
 
-[[Continuar-&gt;Vendedor vs Persona]] </tw-passagedata><tw-passagedata pid="8" name="GOBLINS" tags="Habitación" position="680,759" size="100,100">A través de la mirilla ves a unos goblins de espaldas a la puerta.
+[[Continuar-&gt;Vendedor vs Persona]] </tw-passagedata><tw-passagedata pid="8" name="gooblinsTeVen" tags="" position="1211,1518" size="100,100">(if:$armado is true)[¿Les atacas?
 
-[[Entrar-&gt;HabitaciónGoblins]]
-
-
-</tw-passagedata><tw-passagedata pid="9" name="HabitaciónGoblins" tags="" position="485,892" size="100,100">(if: $aceite is true)[Consigues avanzar sigilosamente.]
-
-(if: $goblinsAmigos is true)[La puerta, oxidada, hace ruido al abrirse. Los goblins se giran y te observan, uno de ellos es el de la celda. Te reconoce y te saluda amigablemente. Su amigo, que si habla tu idioma, te dice &quot;Es peligroso ahí fuera, coje esto&quot; y te da una espada goblin.]
-
-(else:)[La puerta, oxidada, hace ruido al abrirse. Los gooblins te ven y te atacan. 
-
-[[Continuar-&gt;gooblinsTeVen]]]</tw-passagedata><tw-passagedata pid="10" name="gooblinsTeVen" tags="" position="375,951" size="100,100">(if:$armado is true)[Consigues matarlos, pero ahora estás manchado de sangre goblins, la cual es muy viscosa y no se quitan fácilmente.]
+[[Sí-&gt;atacarGooblins]]
+[[No-&gt;morir]]
+]
 
 (else:)[Los gooblins te matan. Fin de la partida.
 
-[[Continuar-&gt;FinPartida]]]</tw-passagedata><tw-passagedata pid="11" name="FinPartida" tags="" position="564,583" size="100,100">[[Empezar de nuevo-&gt;CELDAS]]
+[[Continuar-&gt;FinPartida]]]</tw-passagedata><tw-passagedata pid="9" name="FinPartida" tags="" position="253,985" size="100,100">[[Empezar de nuevo-&gt;CELDAS]]</tw-passagedata><tw-passagedata pid="10" name="Menú" tags="" position="1529,17" size="100,100">BIENVENIDO A **CHEESE DUNGEON**
 
-Hola</tw-passagedata><tw-passagedata pid="12" name="Menú" tags="" position="1529,17" size="100,100">BIENVENIDO A **CHEESE DUNGEON**
-
-[[Empezar nueva partida.-&gt;PersonajeRandom]]</tw-passagedata><tw-passagedata pid="13" name="PersonajeRandom" tags="" position="1530,141" size="100,100">(set: $list4 to (array: &quot;Suertudo&quot;, &quot;Ladronzuelo de pacotilla&quot;, &quot;Hueco&quot;, &quot;Cocinero real&quot;, &quot;Guardián de la biblioteca&quot;, &quot;Caballero sin nombre&quot;, &quot;Mentecato adinerado&quot;, &quot;Semidios cojo&quot;, &quot;Azote de los invertebrados&quot;, &quot;Ladrón de espadas&quot;, &quot;Rey loco&quot;, &quot;Comerciante arisco&quot;, &quot;Gooblin civilizado&quot;, &quot;Jorobado con capa&quot;, &quot;Mago maldito&quot;))
+[[Empezar nueva partida.-&gt;PersonajeRandom]]</tw-passagedata><tw-passagedata pid="11" name="PersonajeRandom" tags="" position="1530,141" size="100,100">(set: $list4 to (array: &quot;Suertudo&quot;, &quot;Ladronzuelo de pacotilla&quot;, &quot;Hueco&quot;, &quot;Cocinero real&quot;, &quot;Guardián de la biblioteca&quot;, &quot;Caballero sin nombre&quot;, &quot;Mentecato adinerado&quot;, &quot;Semidios cojo&quot;, &quot;Azote de los invertebrados&quot;, &quot;Ladrón de espadas&quot;, &quot;Rey loco&quot;, &quot;Comerciante arisco&quot;, &quot;Gooblin civilizado&quot;, &quot;Jorobado con capa&quot;, &quot;Mago maldito&quot;))
 En esta partida serán: (print: $list4[(random: 0,4)]).
 
 Posees:
@@ -108,12 +101,13 @@ Posees:
 (set: $leche to false)
 (set: $ganzúa to 1)
 (set: $aceite to false)
+(set: $alcohol to false)
 
-</tw-passagedata><tw-passagedata pid="14" name="Vendedor vs Persona" tags="Encrucijada" position="1521,716" size="100,100">Continuas a traves de la mazmorra y se te presentan dos caminos.
+</tw-passagedata><tw-passagedata pid="12" name="Vendedor vs Persona" tags="Encrucijada" position="1521,716" size="100,100">Continuas a traves de la mazmorra y se te presentan dos caminos.
 
 A la [[izquierda-&gt;Comerciante]] distingues la figura de un comerciante.
 
-A la [[derecha-&gt;Atormentado]] observas a un ser atormentado balanceándose en una esquina.</tw-passagedata><tw-passagedata pid="15" name="Comerciante" tags="" position="1297,857" size="100,100">Te acercas al comerciante, de aspecto jovial:
+A la [[derecha-&gt;Atormentado]] observas a un ser atormentado balanceándose en una esquina.</tw-passagedata><tw-passagedata pid="13" name="Comerciante" tags="" position="1256,855" size="100,100">Te acercas al comerciante, de aspecto jovial:
 
 &quot;*Buenos días viajero, ¿quiéres comprar alguna cosa?*&quot;
 
@@ -126,14 +120,18 @@ A la [[derecha-&gt;Atormentado]] observas a un ser atormentado balanceándose en
 **Oro:** $oro
 
 
-</tw-passagedata><tw-passagedata pid="16" name="Atormentado" tags="" position="1759,859" size="100,100">Haz doble clic sobre este pasaje para editarlo.</tw-passagedata><tw-passagedata pid="17" name="EspadaComprada" tags="" position="1144,1035" size="100,100">(if: $oro&gt;=2)[&quot;*¡Gracias! Esta espada era de mi abuelo, el pobre se callo sobre ella y se empaló a si mismo... ¡Espero que a ti te traiga mejor suerte!*&quot;
+</tw-passagedata><tw-passagedata pid="14" name="Atormentado" tags="" position="1604,1029" size="100,100">Al acceder en la sala escuchas un murmullo constante. El hombre atormentado no parece haberse percatado de tu presencia.
+
+[[Hablar con el hombre.-&gt;Atormentado1]]
+
+[[Salir de la habitación.-&gt;Gooblins vs Trolls]]</tw-passagedata><tw-passagedata pid="15" name="EspadaComprada" tags="" position="1103,1033" size="100,100">(if: $oro&gt;=2)[&quot;*¡Gracias! Esta espada era de mi abuelo, el pobre se callo sobre ella y se empaló a si mismo... ¡Espero que a ti te traiga mejor suerte!*&quot;
 [[Continuar-&gt;Gooblins vs Trolls]] 
 (set: $oro to $oro - 2)
 (set: $armaDebil to true)]
 
 (else:)[*Pero vamos a ver imbécil, ¿te crees que soy tonto? Si no tienes panoja no me vengas con mierdas, ya tengo bastante con lo mío para tener que lidiar con un explorador graciosillo. ¿Quieres algo o no?*
 
-[[Volver a la tienda-&gt;Comerciante]] ]</tw-passagedata><tw-passagedata pid="18" name="AntorchaComprada" tags="" position="1294,1036" size="100,100">(if: $oro&gt;=1)[&quot;*¡La mejor antorcha de mi tienda! Con ella podrás ver mejor como te descuartizan los gooblins. ¡Vuelve pronto!*&quot;
+[[Volver a la tienda-&gt;Comerciante]] ]</tw-passagedata><tw-passagedata pid="16" name="AntorchaComprada" tags="" position="1253,1034" size="100,100">(if: $oro&gt;=1)[&quot;*¡La mejor antorcha de mi tienda! Con ella podrás ver mejor como te descuartizan los gooblins. ¡Vuelve pronto!*&quot;
 [[Continuar-&gt;Gooblins vs Trolls]] 
 (set: $oro to $oro - 1)
 (set: $antorcha to true)]
@@ -142,10 +140,71 @@ A la [[derecha-&gt;Atormentado]] observas a un ser atormentado balanceándose en
 
 [[Volver a la tienda-&gt;Comerciante]]]
 
-</tw-passagedata><tw-passagedata pid="19" name="LecheComprada" tags="" position="1444,1036" size="100,100">(if: $oro&gt;=1)[&quot;*¡Genial! No te voy a engañar, está rancia, pero quizás te es útil en algun momento. ¡Nos vemos!*&quot;
+</tw-passagedata><tw-passagedata pid="17" name="LecheComprada" tags="" position="1403,1034" size="100,100">(if: $oro&gt;=1)[&quot;*¡Genial! No te voy a engañar, está rancia, pero quizás te es útil en algun momento. ¡Nos vemos!*&quot;
 [[Continuar-&gt;Gooblins vs Trolls]] 
 (set: $oro to $oro - 1)
 (set: $leche to true)]
 (else:)[*Estoy hasta los cojones de tipos como tú con la vida resuelta que se creen los amos del mundo. ¿ Te crees mejor que yo? ¿Eh? ¿Te crees puto mejor que yo? Venga y que te den.*
 
-[[Volver a la tienda-&gt;Comerciante]]]</tw-passagedata><tw-passagedata pid="20" name="Gooblins vs Trolls" tags="" position="1294,1189" size="100,100">Haz doble clic sobre este pasaje para editarlo.</tw-passagedata></tw-storydata>
+[[Volver a la tienda-&gt;Comerciante]]]</tw-passagedata><tw-passagedata pid="18" name="Gooblins vs Trolls" tags="" position="1542,1228" size="100,100">Caminas a través de un estrecho pasillo sin salida. A derecha e izquierda del mismo hay dos puertas.
+
+-Por la mirilla de la de la [[derecha-&gt;HabitaciónGooblins]] ves a un grupo de Gooblins reunidos alrededor de una hoguera, de espaldas a la puerta.
+
+-Por la mirilla de la izquierda distingues un Troll tumbado en el suelo, mirando al techo.</tw-passagedata><tw-passagedata pid="19" name="Atormentado1" tags="" position="1742,1032" size="100,100">Llamas al hombre, que parece muy concentrado en su balanceo y no responde.
+
+[[Hablar con el hombre más fuerte.-&gt;Atormentado2]]
+
+[[Salir de la habitación.-&gt;Gooblins vs Trolls]]</tw-passagedata><tw-passagedata pid="20" name="Atormentado2" tags="" position="1875,1028" size="100,100">Poca pinta tiene de que el hombre atormentado vaya a hacerte caso.
+
+[[Gritar al hombre atormentado.-&gt;Atormentado3]]
+
+[[Salir de la habitación.-&gt;Gooblins vs Trolls]]</tw-passagedata><tw-passagedata pid="21" name="Atormentado3" tags="" position="2000,1030" size="100,100">Nop, que no contesta.
+
+[[Zarandearle hasta que reaccione.-&gt;Atormetado4]]
+
+[[Salir de la habitación.-&gt;Gooblins vs Trolls]]</tw-passagedata><tw-passagedata pid="22" name="Atormetado4" tags="" position="2127,1032" size="100,100">(if: $gordoLiberado is true)[De pronto, entre zarandeos, entra el cincuentón que liberaste en la celda:
+
+**Cincuentón**: &quot;¡José! ¿Qué pasa? Todo el día ahí con el zarandeo, ¿eh?&quot;
+
+**Atormentado**: &quot;Pues sí, ahora justo estaba este tío dándome por culo, yo solo intento hacer bien mi trabajo&quot;
+
+[[Continuar.-&gt;Atormentado6]]
+
+(set: $ganzúa to $ganzúa + 1)
+]
+
+(else:)[
+	Desistes, el hombre parece muy concentrado en su atormento.
+	
+	
+	[[Salir de la sala.-&gt;Gooblins vs Trolls]]
+]
+</tw-passagedata><tw-passagedata pid="23" name="Atormentado6" tags="" position="2274,1029" size="100,100">El cincuentón repara en ti.
+
+**Cincuentón**: ¡Hombre! Pero si es mi colega.
+
+El hombre atormentado te mira:
+
+&quot;Tío, lo siento, llego a saber que conocías a Ernesto y te hago más caso. El tema es que me contrataron para ser el raro de la celda, ¿sabes? Toma una ganzúa, por las molestias.
+
+Recibes una ganzúa.
+
+[[Salir de la sala.-&gt;Gooblins vs Trolls]]
+
+(set: $ganzúa to $ganzúa + 1)</tw-passagedata><tw-passagedata pid="24" name="HabitaciónGooblins" tags="" position="1386,1374" size="100,100">(if: $aceite is true)[Consigues avanzar sigilosamente.]
+
+(if: $goblinsAmigos is true)[La puerta, oxidada, hace ruido al abrirse. Los goblins se giran y te observan, uno de ellos es el de la celda. Te reconoce y te saluda amigablemente. 
+
+Su amigo, que si habla tu idioma, se dirige a ti:
+
+&quot;¿Tú eres quien liberó a Facundo? Y yo que pensaba que erais todos racistas... En fin, gracias compañero, aqui tienes una cervecita, para el camino.&quot;
+
+Consigues una cerveza.
+
+(set: $alcohol to true)]
+
+(else:)[La puerta, oxidada, hace ruido al abrirse. Los gooblins te ven y te atacan. 
+
+[[Continuar-&gt;gooblinsTeVen]]]</tw-passagedata><tw-passagedata pid="25" name="atacarGooblins" tags="" position="1136,1668" size="100,100">Consigues matarlos, pero ahora estás manchado de sangre goblins, la cual es muy viscosa y no se quita fácilmente.</tw-passagedata><tw-passagedata pid="26" name="morir" tags="" position="1286,1668" size="100,100">Los gooblins te matan. Fin de la partida.
+
+[[Continuar.-&gt;FinPartida]]</tw-passagedata></tw-storydata>
