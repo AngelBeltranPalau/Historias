@@ -48,7 +48,7 @@ La [[cuarta-&gt;CeldaVacía]] está vacía.
 </tw-passagedata><tw-passagedata pid="2" name="CeldaGordo" tags="green" position="1377,406" size="100,100">Sigue dormido.
 
 [[Robarle-&gt;RobarGordo]]
-[[Despertarle-&gt;DespertarGordo]]</tw-passagedata><tw-passagedata pid="3" name="CeldaGoblin" tags="" position="1490,405" size="100,100">El goblin masculla y se marcha contento. El hombre de la tercera celda te dice que conoce el lenguaje goblin pero que como no le has liberado no va a traducir nada de lo que ha dicho.
+[[Despertarle-&gt;DespertarGordo]]</tw-passagedata><tw-passagedata pid="3" name="CeldaGoblin" tags="" position="1490,406" size="100,100">El goblin masculla y se marcha contento. El hombre de la tercera celda te dice que conoce el lenguaje goblin pero que como no le has liberado no va a traducir nada de lo que ha dicho.
 
 
 
@@ -329,9 +329,108 @@ El encapuchado te mira, se encoje de hombros y empieza a cortar al hombre, que g
 “No! Leche no! Soy crudivegano! Hablaré! El dragón es intolerante a la lactosa, pero no tomará leche. ¡La única forma de derrotarlo es hacer queso! ¡No puede resistirse al queso!”
 El torturador se encoje de hombros y te devuelve la leche.
 
-[[Continuar-&gt;ReyGooblin]]</tw-passagedata><tw-passagedata pid="38" name="ReyGooblin" tags="" position="1067,2374" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="39" name="SalirTorturador" tags="" position="1379,2167" size="100,100">Te vas sin muchos problemas dejando al pobre hombre encapuchado sin respuesta. Esto no le ayuda con sus problemas de autoestima.
+[[Continuar-&gt;ReyGooblin]]</tw-passagedata><tw-passagedata pid="38" name="ReyGooblin" tags="Encrucijada" position="1503,2408" size="100,100">Llegas a los amplios salones del orgulloso Rey de los Goblins, quien descansa en un imponente trono rodeado de su corte.
 
-[[Continuar.-&gt;ReyGooblin]]</tw-passagedata></tw-storydata>
+“Saludos, visitante. ¡Soy el rey de los goblins!” Dice el monarca con voz imponente.
+
+(if: $goblinsAmigos is true)[Ves como uno de los gooblins te sonríe y le dice unas palabras al monarca, el cuál vuelve a dirigirse a ti:
+
+“Oh! Así que tú eres el liberador de los oprimidos! Sería un honor que tan ilustre héroe se casará con uno de mis retoños!” Dice el Rey mientras señala a sus descendiente.
+
+[[Casarte.-&gt;CasarGooblin]]]
+[[&quot;No, yo soy el rey de los gooblins&quot;-&gt;Duelo]]
+[[Empezar a bailar.-&gt;Baile]]
+[[Presentarte como cocinero real.-&gt;Cocinero]]</tw-passagedata><tw-passagedata pid="39" name="SalirTorturador" tags="" position="1379,2167" size="100,100">Te vas sin muchos problemas dejando al pobre hombre encapuchado sin respuesta. Esto no le ayuda con sus problemas de autoestima.
+
+[[Continuar.-&gt;ReyGooblin]]</tw-passagedata><tw-passagedata pid="40" name="Herrero" tags="" position="1245.6801147460938,3184.474609375" size="100,100">Las fraguas de los enanos se alzan, imponentes, ante ti. Rios de hierro fundido fluye hacia los enormes moldes de piedra donde las gélidas aguas de la montaña enfrían sus creaciones. Sin embargo, solo ves a un enano en la forja.
+
+“Hemos tenido que reducir plantilla por los recortes” te explica, sin apartar la vista del hierro que está trabajando. 
+
+&quot;¿Qué necesitas?&quot;
+
+(if: $alcohol is true)[[[Invitar a cerveza-&gt;HerreroCerveza]]]
+[[Pedirle un arma.-&gt;HerreroArma]]
+[[Preguntarle qué tal le va.-&gt;HerreroPregunta]]</tw-passagedata><tw-passagedata pid="41" name="HerreroCerveza" tags="" position="1095.6801147460938,3334.474609375" size="100,100">“Oh! Mil gracias! Hace eones que no disfruto una de estas!” Dice, justo antes de terminárse la botella entera. Ves como sus ojos se van entrecerrando y una sonrisa placentera aparece en su rostro.
+
+“Joder tio, esta buenísima. ¿Sabes qué?, te has ganado una armadura de puta madre, ¿cunde?
+
+[[Buah loco, me renta mazo-&gt;CogerArmadura]]
+[[Na tío, pasando-&gt;NoCogerArmadura]]</tw-passagedata><tw-passagedata pid="42" name="HerreroArma" tags="" position="1258.6801147460938,3332.474609375" size="100,100">“No ves que estoy liado? Tengo que hacer una manopla de oro para un señor morado o algo así.” 
+
+Tras la cortante respuesta, te marchas de la forja.</tw-passagedata><tw-passagedata pid="43" name="HerreroPregunta" tags="" position="1395.6801147460938,3333.474609375" size="100,100">“Pues la verdad es que el trabajo ha sido duro últimamente. Muchas horas y la nómina tampoco es la gran cosa. He estado pensando en coger la jubilación anticipada, sabes? Pero tal y como esa el país cualquiera se la juega.”
+
+Después de esta revelación de las duras condiciones de vida de la clase trabajadora enana, abandonas la forja.
+</tw-passagedata><tw-passagedata pid="44" name="CogerArmadura" tags="" position="1020.6801147460938,3484.474609375" size="100,100"> Eres recompensado con una descomunal armadura de ceramica capaz de resistir cualquier ataque. Por desgracia, es muy pesada y no puedes moverte. Tampoco puedes quitartela, así que pasas el resto de tus días atrapado en ella escuchando las historias del enano.
+ 
+ [[Fin de la partida-&gt;FinPartida]]
+</tw-passagedata><tw-passagedata pid="45" name="NoCogerArmadura" tags="" position="1170.6801147460938,3484.474609375" size="100,100"> Abandonas la forja satisfecho de haber ayudado a un honrado trabajador enano.</tw-passagedata><tw-passagedata pid="46" name="CasarGooblin" tags="" position="1287,2560.474609375" size="100,100">Aceptas la oferta del Rey y te asigna a dedo uno de sus múltiples retoños. Tras una emotiva ceremonia de boda disfrutas de una vida feliz como parte de la familia real gooblin.
+
+[[Fin de la partida-&gt;FinPartida]]</tw-passagedata><tw-passagedata pid="47" name="Duelo" tags="" position="1427,2558" size="100,100">“No, yo soy el rey de los Goblins!” Contestas con tono desafiante. 
+
+El Rey no se lo toma muy bien, pero los demás Goblins parecen convencidos por tu argumento. La legitimidad del trono se decidirá con un duelo a muerte.
+
+[[Continuar-&gt;Duelo2]]</tw-passagedata><tw-passagedata pid="48" name="Baile" tags="" position="1578,2558" size="100,100">Sin mediar palabra, dejas que el poder de la danza tome el control de tu cuerpo y te marcas los pasos de baile más impresionantes de tu vida.
+
+Acto seguido, los músicos de la corte empiezan a tocar una fanfarria adecuada a tu danza y todo el mundo empieza a celebrar.
+
+[[Continuar-&gt;FinalDanza]]
+</tw-passagedata><tw-passagedata pid="49" name="Cocinero" tags="" position="1728,2558" size="100,100">Pides la oportunidad de hacer uso de las cocinas reales y, por suerte, te la conceden.
+(if: $leche is true)[ 
+Trabajando codo con codo con el famoso chef goblin Alberto Goblote conseguís transformar la leche que llevabas en la alforja en rico y delicioso queso.
+(set: $queso to true)]
+(else:)[
+Trabajando codo con codo con el famoso chef goblin Alberto Goblote cocinas un increíble pollo con patatas. Sin embargo, cuando estabas a punto de salir de la cocina, te tropiezas, tirando el plato al suelo.
+
+&quot;Nos hemos quedado sin cena&quot; masculla el Alberto.
+]
+
+[[Continuar-&gt;Herrero vs Alquimista]]</tw-passagedata><tw-passagedata pid="50" name="FinalDanza" tags="" position="1575,2702" size="100,100">Te despiertas pasado un tiempo indeterminado, rodeado de gooblins desnudos adormecidos. En tu camino fuera de la corte, te llevas una botella de San Goblo, la famosa cerveza goblin.
+
+(Set: $alcohol to true)
+
+[[Continuar-&gt;Herrero vs Alquimista]]</tw-passagedata><tw-passagedata pid="51" name="Herrero vs Alquimista" tags="Encrucijada" position="1499,3016" size="100,100">Avanzando más en tu viaje, encuentras dos nuevos caminos.
+
+A la [[izquierda-&gt;Herrero]] distingues una imponente fragua enana.
+A la [[derecha-&gt;Alquimista]] ves una especie de laboratorio lleno de pociones.</tw-passagedata><tw-passagedata pid="52" name="Duelo2" tags="" position="1426,2698" size="100,100">(if: $armaDebil is true)[Consigues derrotar al Rey Gooblin utilizando tu espada. Los presentes corean tu nombre y te llevan en bolandas hasta el trono.
+
+[[Gobernar el reino gooblin el resto de tu vida.-&gt;FinalMonarquía]]
+[[Explicar al pueblo que tomar los medios de producción es la única forma de terminar con la desigualdad.-&gt;MediosDeProducción]]]
+(else:)[El rey gooblin te aplasta en segundos dejándote como un puré. Sin embargo, el pueblo tenía tantas ganas de cambiar de rey que aprovecha el momento para amotinarse, matando también al Rey Gooblin.
+
+[[Fin de la partida -&gt; FinPartida]]
+]</tw-passagedata><tw-passagedata pid="53" name="FinalMonarquía" tags="" position="1269,2848" size="100,100">Aunque tu reinado es prospero, al cabo de unos pocos años el pueblo se alza contra ti en defensa de la república. Mueres en la guillotina.
+
+[[Fin de la partida.-&gt;FinPartida]]</tw-passagedata><tw-passagedata pid="54" name="MediosDeProducción" tags="" position="1401,2847" size="100,100">El pueblo entiende que en una monarquía capitalista el poder nunca residirá realmente en el pueblo y adopta el comunismo como forma de estado.
+
+[[Continuar-&gt;Herrero vs Alquimista]]</tw-passagedata><tw-passagedata pid="55" name="Alquimista" tags="" position="1727,3173" size="100,100">Llegas a un laboratorio lleno de recipientes, sustancias y utensilios varios. En medio del lugar, hay un hombre encorvado de desaliñada barba blanca que nos mira a través de unas lentes de aumento.
+
+“Oh, un visitante!” Dice ilusionado mientras coje una serie de frascos de su mesa. “¡Toma, prueba uno de mis elixires!”
+
+[[Elixir de campeón.-&gt;ElixirCampeon]]
+[[Elixir del príncipe.-&gt;ElixirPríncipe]]
+[[Elixir de aliento de dragón.-&gt;ElixirDragón]]
+[[Elixir del rey de la pista.-&gt;ElixirBaile]]
+[[Elixir del archimago.-&gt;ElixirArchimago]]
+[[No tomar ninguno.-&gt;RechazarOferta]]</tw-passagedata><tw-passagedata pid="56" name="ElixirCampeon" tags="" position="1518.6801147460938,3326" size="100,100">Te invaden unas ganas salvajes de salvar el mundo. Tu poder es equivalente al de la mejor arma del universo. Tus puños son capaces de partir montañas.
+
+(set: $armaFuerte to true)
+
+[[Continuar-&gt;Dragón]] 
+</tw-passagedata><tw-passagedata pid="57" name="ElixirPríncipe" tags="" position="1652,3325" size="100,100">Como en un cuento de hadas, te conviertes en un encantador príncipe convertido en rana. 
+
+Gozas de una vida feliz como rana de la mazmorra.
+
+[[Final de la partida-&gt;FinPartida]] 
+</tw-passagedata><tw-passagedata pid="58" name="ElixirDragón" tags="" position="1802,3325" size="100,100">El elixir no está mal, pero pica como salsa de tabasco. Por suerte al picor acaba remitiendo y puedes continuar con la aventura.
+
+[[Continuar-&gt;Dragón]] </tw-passagedata><tw-passagedata pid="59" name="ElixirBaile" tags="" position="1952,3325" size="100,100">Tus capacidades de baile se incrementan de forma exponencial.
+
+[[Continuar-&gt;Dragón]] </tw-passagedata><tw-passagedata pid="60" name="ElixirArchimago" tags="" position="2102,3325" size="100,100">Gracias a los conocimientos adquiridos, eres capaz de resolver el mayor enigma de la teoría mística. Tus descubrimientos se publicarán en la revista Magic… Si consigues sobrevivir.
+
+[[Continuar-&gt;Dragón]] 
+</tw-passagedata><tw-passagedata pid="61" name="Dragón" tags="" position="1768,3548" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="62" name="RechazarOferta" tags="" position="2219,3322" size="100,100">Rechazas amablemente la oferta del alquimista, y marchas de su laboratorio.
+
+[[Continuar-&gt;Dragón]] </tw-passagedata><tw-passagedata pid="63" name=" FinPartida" tags="" position="1521,2848" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
