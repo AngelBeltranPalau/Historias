@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Cheese Dungeon" startnode="10" creator="Twine" creator-version="2.3.1" ifid="C9BAE8DD-6929-498C-9C75-DA005CF15B29" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-link[tags~="green"] {
+<tw-storydata name="Cheese Dungeon" startnode="10" creator="Twine" creator-version="2.3.1" ifid="C9BAE8DD-6929-498C-9C75-DA005CF15B29" zoom="0.6" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-link[tags~="green"] {
  color:green; 
 }
 
@@ -29,7 +29,9 @@ tw-sidebar tw-icon.undo {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 
 
@@ -87,7 +89,7 @@ Ahora tienes **$oro monedas de oro**.
 
 (set: $gordoFinal to &quot;El gordo te envía botellas de aceite cada cosecha.&quot;)
 
-[[Continuar-&gt;Vendedor vs Persona]]</tw-passagedata><tw-passagedata pid="8" name="gooblinsTeVen" tags="" position="1210,1516" size="100,100">(if: $goblinsAmigos is true)[La puerta, oxidada, hace ruido al abrirse. Los goblins se giran y te observan, uno de ellos es el de la celda. Te reconoce y te saluda amigablemente. 
+[[Continuar-&gt;Vendedor vs Persona]]</tw-passagedata><tw-passagedata pid="8" name="goblinsTeVen" tags="" position="1210,1516" size="100,100">(if: $goblinsAmigos is true)[La puerta, oxidada, hace ruido al abrirse. Los goblins se giran y te observan, uno de ellos es el de la celda. Te reconoce y te saluda amigablemente. 
 
 Su amigo, que si habla tu idioma, se dirige a ti:
 
@@ -96,17 +98,17 @@ Su amigo, que si habla tu idioma, se dirige a ti:
 Consigues una cerveza.
 (set: $alcohol to true)
 [[Continuar-&gt;Torturador vs Cueva oscura]]
-(set: $nivel3 to &quot;Los gooblins te recordarán como &#39;el liberador de los oprimidos&#39;.&quot;)
+(set: $nivel3 to &quot;Los goblins te recordarán como &#39;el liberador de los oprimidos&#39;.&quot;)
 ]
 
 (else:)[
   (if:$armaDebil is true)[¿Les atacas?
 
-  [[Sí-&gt;atacarGooblins]]
+  [[Sí-&gt;atacarGoblins]]
   [[No-&gt;morir]]
   ]
 
-  (if: $armaDebil is false)[Dos de los gooblins te arrancan la piel poco a poco mientras el otro escribe a toda velocidad en un cuaderno.
+  (if: $armaDebil is false)[Dos de los goblins te arrancan la piel poco a poco mientras el otro escribe a toda velocidad en un cuaderno.
 
   &quot;Esto me irá genial para la tesis de anatomía.&quot;
 
@@ -114,7 +116,7 @@ Consigues una cerveza.
 
   [[Continuar-&gt;FinPartida]]
   
-  (set: $nivel3 to &quot;Los gooblins fueron pioneros en el estudio de la anatomía humana, lo cual a la larga previno muchas enfermedades. Deberías estar agradecido de haber sido objeto de estudio.&quot;)
+  (set: $nivel3 to &quot;Los goblins fueron pioneros en el estudio de la anatomía humana, lo cual a la larga previno muchas enfermedades. Deberías estar agradecido de haber sido objeto de estudio.&quot;)
   ]
  
 ]
@@ -176,7 +178,7 @@ A la [[derecha-&gt;Atormentado]] observas a un ser atormentado balanceándose en
 	-[[**Espada mística del destino**-&gt;EspadaComprada]] (2 monedas de oro)
 	-[[**Antorcha de luz azulada**-&gt;AntorchaComprada]] (1 moneda de oro)
 	-[[**Leche de oveja**-&gt;LecheComprada]] (1 moneda de oro)
-	-[[**Nada**-&gt;Gooblins vs Trolls]] (Mirada de odio del comerciante)
+	-[[**Nada**-&gt;Goblins vs Trolls]] (Mirada de odio del comerciante)
 
 
 **Oro:** $oro
@@ -185,17 +187,17 @@ A la [[derecha-&gt;Atormentado]] observas a un ser atormentado balanceándose en
 
 [[Hablar con el hombre.-&gt;Atormentado1]]
 
-[[Salir de la habitación.-&gt;Gooblins vs Trolls]]
+[[Salir de la habitación.-&gt;Goblins vs Trolls]]
 
 (set: $nivel2 to &quot;José, el hombre atormentado, recibió un aumento de sueldo debido a su buen desempeño en la labor de raro de la mazmorra. Eso le hizo vivir todavía más alienado con el sistema capitalista, utilizando frases como &#39;si quieres, puedes&#39; y otras gilipolleces del estilo.&quot;)</tw-passagedata><tw-passagedata pid="15" name="EspadaComprada" tags="" position="1103,1033" size="100,100">(if: $oro&gt;=2)[&quot;*¡Gracias! Esta espada era de mi abuelo, el pobre se callo sobre ella y se empaló a si mismo... ¡Espero que a ti te traiga mejor suerte!*&quot;
-[[Continuar-&gt;Gooblins vs Trolls]] 
+[[Continuar-&gt;Goblins vs Trolls]] 
 (set: $oro to $oro - 2)
 (set: $armaDebil to true)]
 
 (else:)[*Pero vamos a ver imbécil, ¿te crees que soy tonto? Si no tienes panoja no me vengas con mierdas, ya tengo bastante con lo mío para tener que lidiar con un explorador graciosillo. ¿Quieres algo o no?*
 
 [[Volver a la tienda-&gt;Comerciante]] ]</tw-passagedata><tw-passagedata pid="16" name="AntorchaComprada" tags="" position="1253,1034" size="100,100">(if: $oro&gt;=1)[&quot;*¡La mejor antorcha de mi tienda! Con ella podrás ver mejor como te descuartizan los gooblins. ¡Vuelve pronto!*&quot;
-[[Continuar-&gt;Gooblins vs Trolls]] 
+[[Continuar-&gt;Goblins vs Trolls]] 
 (set: $oro to $oro - 1)
 (set: $antorcha to true)]
 (else:)[*Joder... En serio pavo, ¿tienes dinero o no? ¿Te crees que es fácil levantarse a las cinco de la mañana todos los putos días para que en todo el día solo vengan un par de compradores? Si no tienes dinero vete a tomar por culo.*
@@ -204,28 +206,28 @@ A la [[derecha-&gt;Atormentado]] observas a un ser atormentado balanceándose en
 [[Volver a la tienda-&gt;Comerciante]]]
 
 </tw-passagedata><tw-passagedata pid="17" name="LecheComprada" tags="" position="1403,1034" size="100,100">(if: $oro&gt;=1)[&quot;*¡Genial! No te voy a engañar, está rancia, pero quizás te es útil en algun momento. ¡Nos vemos!*&quot;
-[[Continuar-&gt;Gooblins vs Trolls]] 
+[[Continuar-&gt;Goblins vs Trolls]] 
 (set: $oro to $oro - 1)
 (set: $leche to true)]
 (else:)[*Estoy hasta los cojones de tipos como tú con la vida resuelta que se creen los amos del mundo. ¿ Te crees mejor que yo? ¿Eh? ¿Te crees puto mejor que yo? Venga y que te den.*
 
-[[Volver a la tienda-&gt;Comerciante]]]</tw-passagedata><tw-passagedata pid="18" name="Gooblins vs Trolls" tags="Encrucijada" position="1543,1228" size="100,100">Caminas a través de un estrecho pasillo sin salida. A derecha e izquierda del mismo hay dos puertas.
+[[Volver a la tienda-&gt;Comerciante]]]</tw-passagedata><tw-passagedata pid="18" name="Goblins vs Trolls" tags="Encrucijada" position="1543,1228" size="100,100">Caminas a través de un estrecho pasillo sin salida. A derecha e izquierda del mismo hay dos puertas.
 
--Por la mirilla de la de la [[derecha-&gt;HabitaciónGooblins]] ves a un grupo de gooblins reunidos alrededor de una hoguera, de espaldas a la puerta.
+-Por la mirilla de la de la [[derecha-&gt;HabitaciónGoblins]] ves a un grupo de gooblins reunidos alrededor de una hoguera, de espaldas a la puerta.
 
 -Por la mirilla de la [[izquierda-&gt;HabitaciónTroll]] distingues a un troll tumbado en el suelo, mirando al techo.</tw-passagedata><tw-passagedata pid="19" name="Atormentado1" tags="" position="1742,1032" size="100,100">Llamas al hombre, que parece muy concentrado en su balanceo y no responde.
 
 [[Hablar con el hombre más fuerte.-&gt;Atormentado2]]
 
-[[Salir de la habitación.-&gt;Gooblins vs Trolls]]</tw-passagedata><tw-passagedata pid="20" name="Atormentado2" tags="" position="1875,1028" size="100,100">Poca pinta tiene de que el hombre atormentado vaya a hacerte caso.
+[[Salir de la habitación.-&gt;Goblins vs Trolls]]</tw-passagedata><tw-passagedata pid="20" name="Atormentado2" tags="" position="1875,1028" size="100,100">Poca pinta tiene de que el hombre atormentado vaya a hacerte caso.
 
 [[Gritar al hombre atormentado.-&gt;Atormentado3]]
 
-[[Salir de la habitación.-&gt;Gooblins vs Trolls]]</tw-passagedata><tw-passagedata pid="21" name="Atormentado3" tags="" position="2000,1030" size="100,100">Nop, que no contesta.
+[[Salir de la habitación.-&gt;Goblins vs Trolls]]</tw-passagedata><tw-passagedata pid="21" name="Atormentado3" tags="" position="2000,1030" size="100,100">Nop, que no contesta.
 
 [[Zarandearle hasta que reaccione.-&gt;Atormetado4]]
 
-[[Salir de la habitación.-&gt;Gooblins vs Trolls]]</tw-passagedata><tw-passagedata pid="22" name="Atormetado4" tags="" position="2126,1032" size="100,100">(if: $gordoLiberado is true)[De pronto, entre zarandeos, entra el cincuentón que liberaste en la celda:
+[[Salir de la habitación.-&gt;Goblins vs Trolls]]</tw-passagedata><tw-passagedata pid="22" name="Atormetado4" tags="" position="2126,1032" size="100,100">(if: $gordoLiberado is true)[De pronto, entre zarandeos, entra el cincuentón que liberaste en la celda:
 
 **Cincuentón**: &quot;¡José! ¿Qué pasa? Todo el día ahí con el zarandeo, ¿eh?&quot;
 
@@ -240,7 +242,7 @@ A la [[derecha-&gt;Atormentado]] observas a un ser atormentado balanceándose en
 	Desistes, el hombre parece muy concentrado en su atormento.
 	
 	
-	[[Salir de la sala.-&gt;Gooblins vs Trolls]]
+	[[Salir de la sala.-&gt;Goblins vs Trolls]]
 ]
 </tw-passagedata><tw-passagedata pid="23" name="Atormentado6" tags="" position="2276,1029" size="100,100">El cincuentón repara en ti.
 
@@ -252,15 +254,16 @@ El hombre atormentado te mira:
 
 Recibes una ganzúa.
 
-[[Salir de la sala.-&gt;Gooblins vs Trolls]]
+[[Salir de la sala.-&gt;Goblins vs Trolls]]
 
-(set: $ganzúa to $ganzúa + 1)</tw-passagedata><tw-passagedata pid="24" name="HabitaciónGooblins" tags="" position="1386,1375" size="100,100">(if: $aceite is true)[Consigues avanzar sigilosamente.]
+(set: $ganzúa to $ganzúa + 1)</tw-passagedata><tw-passagedata pid="24" name="HabitaciónGoblins" tags="" position="1386,1375" size="100,100">(if: $aceite is true)[Utilizas el aceita para engrasar las bisagras, y consigues avanzar sigilosamente.
+[[Continuar-&gt;Torturador vs Cueva oscura]]]
 
-(else:)[La puerta, oxidada, hace ruido al abrirse. Los gooblins te ven. 
+(else:)[La puerta, oxidada, hace ruido al abrirse. Los goblins te ven. 
 
-[[Continuar-&gt;gooblinsTeVen]]]
+[[Continuar-&gt;goblinsTeVen]]]
 
-</tw-passagedata><tw-passagedata pid="25" name="atacarGooblins" tags="" position="1134,1669" size="100,100">Consigues matarlos, pero ahora estás manchado de sangre goblins, la cual es muy viscosa y no se quita fácilmente.
+</tw-passagedata><tw-passagedata pid="25" name="atacarGoblins" tags="" position="1134,1669" size="100,100">Consigues matarlos, pero ahora estás manchado de sangre goblins, la cual es muy viscosa y no se quita fácilmente.
 
 [[Continuar-&gt;Torturador vs Cueva oscura]]
 
@@ -324,7 +327,7 @@ Por el camino [[izquierdo-&gt;CuevaOscura]] no distingues gran cosa, la luz es c
 	Cuando por fin sales de la cueva, notas que tu bolsa de oro se ha vaciado.
 (set: $oro to 0)
 (set: $nivel3 to &quot;La figura que te robó el oro en la caverna oscura terminó siendo atrapado por las autoridades y juzgado por apropiación indevida.&quot;)
-[[Continuar-&gt;ReyGooblin]] 
+[[Continuar-&gt;ReyGoblin]] 
 ]
 (else:)
 [
@@ -334,51 +337,51 @@ Gracias a tu antorcha, la oscuridad no es problema para ti y avanzas sin problem
 Sales de los túneles con cien monedas más de oro.
 (set: &amp;oro to &amp;oro+100)
 
-[[Continuar-&gt;ReyGooblin]]
+[[Continuar-&gt;ReyGoblin]]
 
 (set: $nivel3 to &quot;El duendecillo que te dió cien monedas de oro terminó siendo atrapado por las autoridades y juzgado por apropiación indevida.&quot;)
 ]
 </tw-passagedata><tw-passagedata pid="33" name=" TorturadorOro" tags="" position="1040,2166" size="100,100">“Oh gracias, me compraré algo bonito.”
 El encapuchado coje tu oro y sale contento de la habitación.
 
-[[Salir de la habitación.-&gt;ReyGooblin]]</tw-passagedata><tw-passagedata pid="34" name=" TorturadorGanzúa" tags="" position="1270,2168" size="100,100">“No está mal, la forma perfecta para sacarle un ojo a alguien...”
+[[Salir de la habitación.-&gt;ReyGoblin]]</tw-passagedata><tw-passagedata pid="34" name=" TorturadorGanzúa" tags="" position="1270,2168" size="100,100">“No está mal, la forma perfecta para sacarle un ojo a alguien...”
 Cuando el hombre de la bolsa empieza su trabajo, el preso no tarda en hablar.
 “¡Escondí un tesoro en la celda vacía del principio de esta mazmorra! ¡Solo se puede conseguir con una ganzúa!”
 
 El encapuchado te mira, se encoje de hombros y empieza a hundir la ganzúa en el ojo el hombre, que grita despavorido.
 
-[[Salir de la habitación.-&gt;ReyGooblin]]
+[[Salir de la habitación.-&gt;ReyGoblin]]
 
-[[Continuar-&gt;ReyGooblin]]</tw-passagedata><tw-passagedata pid="35" name=" TorturadorAntorcha" tags="" position="814,2169" size="100,100">“Que buena idea! Le voy a quemar los pies hasta tostarlos.”
+[[Continuar-&gt;ReyGoblin]]</tw-passagedata><tw-passagedata pid="35" name=" TorturadorAntorcha" tags="" position="814,2169" size="100,100">“Que buena idea! Le voy a quemar los pies hasta tostarlos.”
 Cuando el hombre de la bolsa empieza su trabajo el preso no tarda en hablar.
 “¡Una antorcha es la única forma de ver en los oscuras cuevas naturales de este lugar!”
 
 El encapuchado te mira, se encoje de hombros y empieza a quemar al hombre, que grita despavorido.
 
-[[Salir de la habitación.-&gt;ReyGooblin]]</tw-passagedata><tw-passagedata pid="36" name=" TorturadorArmaDebil" tags="" position="919,2168" size="100,100">“Vieja escuela, ya veo… Le cortaré los dedos en rodajitas muy finitas…”
+[[Salir de la habitación.-&gt;ReyGoblin]]</tw-passagedata><tw-passagedata pid="36" name=" TorturadorArmaDebil" tags="" position="919,2168" size="100,100">“Vieja escuela, ya veo… Le cortaré los dedos en rodajitas muy finitas…”
 Cuando el hombre de la bolsa empieza su trabajo el preso no tarda en hablar.
 “Esa espada puede ser útil contra los sucios goblins y trolls, pero será inútil contra el dragón!”
 
 El encapuchado te mira, se encoje de hombros y empieza a cortar al hombre, que grita despavorido.
 
-[[Salir de la habitación.-&gt;ReyGooblin]]</tw-passagedata><tw-passagedata pid="37" name=" TorturadorLeche" tags="" position="1159,2169" size="100,100">El hombre de la bolsa va a hablar, pero es interrumpido por las súplicas del preso.
+[[Salir de la habitación.-&gt;ReyGoblin]]</tw-passagedata><tw-passagedata pid="37" name=" TorturadorLeche" tags="" position="1159,2169" size="100,100">El hombre de la bolsa va a hablar, pero es interrumpido por las súplicas del preso.
 “No! Leche no! Soy crudivegano! Hablaré! El dragón es intolerante a la lactosa, pero no tomará leche. ¡La única forma de derrotarlo es hacer queso! ¡No puede resistirse al queso!”
 El torturador se encoje de hombros y te devuelve la leche.
 
-[[Continuar-&gt;ReyGooblin]]</tw-passagedata><tw-passagedata pid="38" name="ReyGooblin" tags="Encrucijada" position="1502,2408" size="100,100">Llegas a los amplios salones del orgulloso Rey de los Goblins, quien descansa en un imponente trono rodeado de su corte.
+[[Continuar-&gt;ReyGoblin]]</tw-passagedata><tw-passagedata pid="38" name="ReyGoblin" tags="Encrucijada" position="1502,2408" size="100,100">Llegas a los amplios salones del orgulloso Rey de los Goblins, quien descansa en un imponente trono rodeado de su corte.
 
 “Saludos, visitante. ¡Soy el rey de los goblins!” Dice el monarca con voz imponente.
 
-(if: $goblinsAmigos is true)[Ves como uno de los gooblins te sonríe y le dice unas palabras al monarca, el cuál vuelve a dirigirse a ti:
+(if: $goblinsAmigos is true)[Ves como uno de los goblins te sonríe y le dice unas palabras al monarca, el cuál vuelve a dirigirse a ti:
 
 “Oh! Así que tú eres el liberador de los oprimidos! Sería un honor que tan ilustre héroe se casará con uno de mis retoños!” Dice el Rey mientras señala a sus descendiente.
 
-[[Casarte.-&gt;CasarGooblin]]]
+[[Casarte.-&gt;CasarGoblin]]]
 [[&quot;No, yo soy el rey de los gooblins&quot;-&gt;Duelo]]
 [[Empezar a bailar.-&gt;Baile]]
 [[Presentarte como cocinero real.-&gt;Cocinero]]</tw-passagedata><tw-passagedata pid="39" name="SalirTorturador" tags="" position="1379,2167" size="100,100">Te vas sin muchos problemas dejando al pobre hombre encapuchado sin respuesta. Esto no le ayuda con sus problemas de autoestima.
 
-[[Continuar.-&gt;ReyGooblin]]</tw-passagedata><tw-passagedata pid="40" name="Herrero" tags="" position="1245,3184" size="100,100">Las fraguas de los enanos se alzan, imponentes, ante ti. Rios de hierro fundido fluye hacia los enormes moldes de piedra donde las gélidas aguas de la montaña enfrían sus creaciones. Sin embargo, solo ves a un enano en la forja.
+[[Continuar.-&gt;ReyGoblin]]</tw-passagedata><tw-passagedata pid="40" name="Herrero" tags="" position="1245,3184" size="100,100">Las fraguas de los enanos se alzan, imponentes, ante ti. Rios de hierro fundido fluye hacia los enormes moldes de piedra donde las gélidas aguas de la montaña enfrían sus creaciones. Sin embargo, solo ves a un enano en la forja.
 
 “Hemos tenido que reducir plantilla por los recortes” te explica, sin apartar la vista del hierro que está trabajando. 
 
@@ -412,11 +415,11 @@ Después de esta revelación de las duras condiciones de vida de la clase trabaj
  
  [[Continuar-&gt;Taquillas vs Fuent]]
  
-(set: $nivel6 to &quot;El enano consiguió salir adelante con la forja, contratando a varios enanos más. La bonanza económica y su incremento de clase lo convirtieron en un jefe despreciable.&quot;)</tw-passagedata><tw-passagedata pid="46" name="CasarGooblin" tags="" position="1286,2559" size="100,100">Aceptas la oferta del Rey y te asigna a dedo uno de sus múltiples retoños. Tras una emotiva ceremonia de boda disfrutas de una vida feliz como parte de la familia real gooblin.
+(set: $nivel6 to &quot;El enano consiguió salir adelante con la forja, contratando a varios enanos más. La bonanza económica y su incremento de clase lo convirtieron en un jefe despreciable.&quot;)</tw-passagedata><tw-passagedata pid="46" name="CasarGoblin" tags="" position="1286,2559" size="100,100">Aceptas la oferta del Rey y te asigna a dedo uno de sus múltiples retoños. Tras una emotiva ceremonia de boda disfrutas de una vida feliz como parte de la familia real goblin.
 
 [[Fin de la partida-&gt;FinPartida]]
 
-(set: $nivel5 to &quot;Aunque viviste felizmente con los gooblins, el reinado del Rey Gooblin pronto termino debido a un alzamiento proletario en defensa de la república. La vida de todos los dirigentes y la tuya terminó en la guillotina.&quot;)</tw-passagedata><tw-passagedata pid="47" name="Duelo" tags="" position="1427,2558" size="100,100">“No, yo soy el rey de los Goblins!” Contestas con tono desafiante. 
+(set: $nivel5 to &quot;Aunque viviste felizmente con los goblins, el reinado del Rey Goblin pronto termino debido a un alzamiento proletario en defensa de la república. La vida de todos los dirigentes y la tuya terminó en la guillotina.&quot;)</tw-passagedata><tw-passagedata pid="47" name="Duelo" tags="" position="1427,2558" size="100,100">“No, yo soy el rey de los Goblins!” Contestas con tono desafiante. 
 
 El Rey no se lo toma muy bien, pero los demás Goblins parecen convencidos por tu argumento. La legitimidad del trono se decidirá con un duelo a muerte.
 
@@ -437,7 +440,7 @@ Trabajando codo con codo con el famoso chef goblin Alberto Goblote cocinas un in
 
 [[Continuar-&gt;Herrero vs Alquimista]]
 
-(set: $nivel5 to &quot;El reinado del Rey Gooblin pronto termino debido a un alzamiento proletario en defensa de la república. La vida de todos los dirigentes y la tuya terminó en la guillotina.&quot;)</tw-passagedata><tw-passagedata pid="50" name="FinalDanza" tags="" position="1575,2702" size="100,100">Te despiertas pasado un tiempo indeterminado, rodeado de gooblins desnudos adormecidos. En tu camino fuera de la corte, te llevas una botella de San Goblo, la famosa cerveza goblin.
+(set: $nivel5 to &quot;El reinado del Rey Goblin pronto termino debido a un alzamiento proletario en defensa de la república. La vida de todos los dirigentes y la tuya terminó en la guillotina.&quot;)</tw-passagedata><tw-passagedata pid="50" name="FinalDanza" tags="" position="1575,2702" size="100,100">Te despiertas pasado un tiempo indeterminado, rodeado de gooblins desnudos adormecidos. En tu camino fuera de la corte, te llevas una botella de San Goblo, la famosa cerveza goblin.
 
 (Set: $alcohol to true)
 
